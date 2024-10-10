@@ -1,3 +1,9 @@
+header {
+    h1 {
+        text-align: center;
+    }
+}
+
 .intro_img {
     display: flex;
     gap: 30px;
@@ -16,7 +22,7 @@
         }
 
         p {
-            font-size: 20px;
+            font-size: 20px; 
             height: 50px;
             line-height: 50px;
         }
