@@ -22,11 +22,33 @@ img {
 
 table {
     width: 50vw;
-    text-align: center;
     margin: auto;
+    border: 2px dashed #86652b;
 
     th {
         width: 50px;
         height: 25px;
+        color: #fff;
+        background-color: #eaaa3a;
+
+        &:first-child {
+            color: red;
+        }
+
+        &:last-child {
+            color: blue;
+        }
+    }
+
+    td {
+        &:first-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        &:last-child {
+            color: blue;
+            font-weight: bold;
+        }
     }
 }
