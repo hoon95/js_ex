@@ -22,7 +22,7 @@ header {
         }
 
         p {
-            font-size: 20px; 
+            font-size: 20px;
             height: 50px;
             line-height: 50px;
         }
@@ -30,7 +30,9 @@ header {
 }
 
 .contact {
-    & .phone, .email {
+
+    & .phone,
+    .email {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -40,8 +42,29 @@ header {
         color: #000000;
         font-size: 30px;
         text-decoration: none;
+
         & span {
             font-size: 20px;
+        }
+    }
+}
+
+.project {
+    margin-top: 20px;
+    text-align: center;
+
+    >div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2%;
+
+        img.spss {
+            width: 30%;
+        }
+
+        >div {
+            width: 30%;
         }
     }
 }
