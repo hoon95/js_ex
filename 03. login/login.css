@@ -109,8 +109,7 @@ body {
         height: 100%;
         z-index: 99;
 
-        animation: loginSlide 1.5s;
-        animation-fill-mode: forwards;
+        animation: loginSlide 1.5s forwards;
 
         label {
             font-size: 40px;
