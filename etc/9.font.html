@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Noto+Sans+KR:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Noto+Sans+KR:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .p1 {
+            font-family: "Nanum Gothic", "Malgun Gothic", sans-serif;
+            font-size: 20px;
+        }
+
+        .p2 {
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .p3 {
+            font-family: "Londrina Sketch", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .p4 {
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .code {
+            font-family: "Courier New";
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>폰트란?</h1>
+    <p class="p1">This is font 이것은 폰트</p>
+    <p class="p2">This is Noto Sans 노토 산스</p>
+    <p class="p3">This is font </p>
+    <p class="p4">This is Rubik 이것은 루빅</p>
+    <pre class="code">
+    document.querySelector("#no-escape").addEventListener("click", () => {
+        setBackgroundColor("this?element");
+    });
+
+    document.querySelector("#css-escape").addEventListener("click", () => {
+        setBackgroundColor(CSS.escape("this?element"));
+      });
+      
+    document.querySelector("#manual-escape").addEventListener("click", () => {
+        setBackgroundColor("this\\?element");
+    });
+    </pre>
+
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia nobis perspiciatis tempora tenetur aspernatur
+        cupiditate ab fugiat. Iusto dolorem maxime sequi quae, explicabo labore beatae accusantium nihil vel quisquam
+        facilis.
+    </p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.p1').css({ color: 'red', fontSize: '30px', fontWeight: 'bold' });
+        document.querySelect('.p2').style.color = 'blue';
+    </script>
+
+</body>
+
+</html>
