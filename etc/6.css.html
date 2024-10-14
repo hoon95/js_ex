@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul,
+        li {
+            list-style-type: none;
+        }
+
+        ul {
+            >li {
+                &::before {
+                    content: '🍵';
+                }
+            }
+
+            li {
+                &::before {
+                    content: '☕';
+                }
+
+                &::after {
+                    content: '🌭';
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>아메리카노</li>
+        <ul>
+            <li>아아</li>
+            <li>뜨아</li>
+        </ul>
+
+        <li>카푸치노</li>
+        <li>에스프레소</li>
+    </ul>
+</body>
+
+</html>
