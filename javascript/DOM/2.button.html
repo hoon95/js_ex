@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="mytext">이 텍스트의 글자를 변경해보시오</p>
+    <button onclick="myClick()">button</button>
+</body>
+
+<script>
+    function myClick() {
+        const myText = document.querySelector('#mytext');
+        const myBtn = document.querySelector('button');
+
+        myText.classList.toggle('click');
+        myText.innerText = '이 텍스트의 색상을 토글해보세요';
+
+        if (myText.className == 'click') {
+            myText.style.color = 'blue';
+        } else {
+            myText.style.color = 'red';
+        }
+    }
+</script>
+
+</html>
