@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+
+    <style>
+        .calcDiv {
+            width: 30%;
+            display: grid;
+            grid-template-columns: repeat(4, lfr);
+            grid-gap: 10px;
+            margin: auto;
+            text-align: center;
+            
+            input {
+                grid-column: span 4;
+                padding: 10px;
+                font-size: 1em;
+            }
+
+            button {
+                padding: 10px;
+                font-size: 1em;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calcDiv">
+        <input type="text">
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+        <button>/</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>=</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>C</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>0</button>
+
+        <!-- <table id="calcBtn">
+            <tr>
+                <td>+</td>
+                <td>-</td>
+                <td>*</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>=</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+        </table> -->
+    </div>
+</body>
+
+<script src="calc.js"></script>
+</html>
