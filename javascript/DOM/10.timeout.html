@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>화면 리프레시(refresh)하기</h1>
+    <p>이 페이지는 3초 후에 자동 리프레시 됩니다</p>
+</body>
+<script>
+    console.log('refresh');
+
+    setTimeout(()=> {
+        window.location.reload();       // 브라우저 주소창을 통한 refresh (브라우저 cache 내용으로 불러옴)
+        window.location.reload(true);   // 외부 서버로부터 reload (cache 미사용)
+    }, 3000)
+</script>
+</html>

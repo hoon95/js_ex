@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- defer -->
+    <!-- DOM이 로딩 된 이후 -->
+    <script src="modal.js" defer></script>
+
+    <style>
+        .modal_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.5);
+            
+            & .modal {
+                width: 30%;
+                height: 20%;
+                background: #fff;
+                border: 1px solid #000;
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <p>아무 내용이나 작성하시오</p>
+    <button id="open">모달 열기</button>
+
+    <div class="modal_container" style="display: none">
+        <div class="modal">
+            <div class="modal_title">안녕하세요</div>
+            <p>모달 내용</p>
+            <div class="modal_close">
+                <button id="close">닫기</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const modalTitle = document.querySelector('.modal_container');
+    const modalBtn = document.querySelector('#open');
+    const closeBtn = document.querySelector('#close');
+
+    modalBtn.addEventListener('click', () => {
+        // modalTitle.classList.toggle('click');
+
+        // if(modalTitle.classList.contains('click')){
+            modalTitle.style.display = 'flex';
+        // }
+    })
+
+    closeBtn.addEventListener('click', () => {
+        modalTitle.style.display = 'none';
+    })
+
+
+</script>
+</html>
