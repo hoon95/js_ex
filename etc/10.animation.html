@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes moveLeft {
+            0% {
+                left: 0;
+            }
+
+            50% {
+                left: 200px;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: moveLeft 0.5s ease-in-out infinite;
+        }
+
+        .text {
+            color: black;
+            animation: fadeOut 0.5s infinite;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <br>
+    <p class="text">Fade Out Animation</p>
+</body>
+
+</html>

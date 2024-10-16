@@ -1,0 +1,118 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background: linear-gradient(to bottom, #130f2e, #2a2558, #130f2e);
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sign up */
+.signup {
+    position: relative;
+    display: flex;
+    width: 50vw;
+    height: 70%;
+    border: 1px solid #000;
+    border-radius: 15px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px 2px #000;
+    overflow: hidden;
+
+    form {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        z-index: 99;
+
+        label {
+            font-weight: bold;
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 100px;
+        }
+
+        input {
+            width: 70%;
+            height: 35px;
+            margin-bottom: 20px;
+            padding: 5px;
+            border: 2px solid #e0dede;
+            border-radius: 7px;
+            background-color: #e0dede;
+
+            &::placeholder {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 600;
+            }
+        }
+
+        button {
+            width: 60%;
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            background-color: #573b8a;
+            border: 2px solid #573b8a;
+            border-radius: 5px;
+            padding: 8px 5px;
+        }
+    }
+}
+
+@keyframes loginSlide {
+    0% {
+        top: 90%;
+    }
+
+    100% {
+        top: 30%;
+    }
+}
+
+/* Click - Login */
+.login {
+    position: absolute;
+    width: 250%;
+    height: 100%;
+    top: 90%;
+    background-color: #fff;
+    border: 0;
+    border-top-left-radius: 55%;
+    border-top-right-radius: 55%;
+
+    form {
+        margin-top: 20px;
+
+        label {
+            font-size: 25px;
+            color: #573b8a;
+        }
+
+        input {
+            width: 30%;
+        }
+
+        button {
+            width: 25%;
+        }
+    }
+
+    &:hover {
+        height: 100%;
+        z-index: 99;
+
+        animation: loginSlide 1.5s forwards;
+
+        label {
+            font-size: 40px;
+        }
+    }
+}

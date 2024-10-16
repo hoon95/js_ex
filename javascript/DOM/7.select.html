@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>select box</h1>
+    <select name="fruits" id="fruits" onchange="fruitDisplay()">
+        <option value="1">사과</option>
+        <option value="2">바나나</option>
+        <option value="3">오렌지</option>
+    </select>
+    <div id="result"></div>
+
+    <script>
+        function fruitDisplay(){
+            const fruit_value = document.querySelector('#fruits').value;
+            const result = document.querySelector('#result');
+
+            console.log(fruit_value);
+
+            switch (fruit_value) {
+                case "1" :
+                    result.innerHTML = "<p>This is \<strong>Apple</p>";
+                    break;
+                case "2" :
+                    result.innerHTML = "<p>This is \<strong>Banana</p>";
+                    break;
+                case "3" :
+                    result.innerHTML = "<p>This is \<strong>Orange</p>";
+                    break;
+                default:
+                    document.write('WHAT?');
+            }
+        }
+    </script>
+</body>
+</html>

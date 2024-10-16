@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        header {
+            background-color: #555555;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        nav {
+            float: left;
+            width: 30%;
+            background-color: #cccccc;
+            padding: 20px;
+        }
+
+        article {
+            float: left;
+            width: 70%;
+            height: 300px;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            background-color: #777;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>도시</h1>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li>서울</li>
+                <li>부산</li>
+                <li>세종</li>
+                <li>제주</li>
+            </ul>
+        </nav>
+
+        <article>
+            <h2>서울</h2>
+            <p>서울에 대한 소개글을 작성하는 곳</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>여기는 copyright 또는 나만의 footer 추가</p>
+    </footer>
+
+</body>
+
+</html>

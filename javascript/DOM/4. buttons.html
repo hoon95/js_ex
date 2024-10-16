@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>button world</h1>
+    <div id="num">0</div>
+    <div>
+        <button onclick="number_inc()">+1</button>
+        <button onclick="number_dec()">-1</button>
+    </div>
+</body>
+
+<script>
+    const num = document.querySelector('#num');
+    let num_default = Number(num.innerText);
+
+    function number_inc() {
+        num_default += 1;
+        num.innerText = num_default;
+    }
+    
+    function number_dec() {
+        num_default -= 1;
+        num.innerText = num_default;
+    }
+</script>
+</html>

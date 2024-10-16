@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>입력폼</h2>
+    <form action="login.html" method="POST">
+        <label for="id">ID : </label>
+        <input type="text" name="id">
+
+        <label for="password">PW : </label>
+        <input type="password" name="password">
+
+        <input type="submit" value="login">
+    </form>
+
+    <hr>
+
+    <h2>check, Radio, select</h2>
+    <section>
+        <input type="checkbox" value="1" name="dog" id="dog">
+        <label for="dog">강아지</label>
+        <input type="checkbox" value="2" name="cat" id="cat">
+        <label for="cat">고양이</label>
+        <input type="checkbox" value="3" name="mm" id="mm">
+        <label for="mm">멍멍이</label>
+
+    </section>
+
+    <section>
+        <input type="radio" name="radioBtn" value="1" id="hamster">
+        <label for="hamster">햄스터</label>
+        <input type="radio" name="radioBtn" value="2" id="hamtory">
+        <label for="hamtory">햄토리</label>
+        <input type="radio" name="radioBtn" value="3" id="bbiyak">
+        <label for="bbiyak">삐약삐약</label>
+    </section>
+
+    <section>
+        <select name="food" id="food" size="4" multiple>
+            <option value="pizza">피자</option>
+            <option value="chicken">치킨</option>
+            <option value="jokbal">족발</option>
+            <option value="bossam">보쌈</option>
+        </select>
+    </section>
+</body>
+
+</html>
