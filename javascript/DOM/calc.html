@@ -7,26 +7,28 @@
 
     <style>
         .calcDiv {
-            width: 30%;
             display: grid;
-            grid-template-columns: repeat(4, lfr);
-            grid-gap: 10px;
+            gap: 10px;
+            width: 30%;
             margin: auto;
             text-align: center;
             
             input {
-                grid-column: span 4;
-                padding: 10px;
+                grid-column: 1/5;
+                height: 30px;
                 font-size: 1em;
             }
 
             button {
                 padding: 10px;
                 font-size: 1em;
-            }
-            
-        }
 
+                &:hover {
+                    border: 2px solid #000;
+                    border-radius: 3px;
+                }
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,33 +50,6 @@
         <button>2</button>
         <button>3</button>
         <button>0</button>
-
-        <!-- <table id="calcBtn">
-            <tr>
-                <td>+</td>
-                <td>-</td>
-                <td>*</td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>=</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>C</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>0</td>
-            </tr>
-        </table> -->
     </div>
 </body>
 
