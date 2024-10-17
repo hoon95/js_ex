@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="글자를 입력하세요">
+    <div id="displayKey"></div>
+</body>
+
+<script>
+    document.addEventListener('keydown', (e) => {   // keypress
+        console.log(e.key);
+    })
+    document.addEventListener('keyup', (e) => {     // 눌렀다 떼었을 때 종료
+        console.log(`${e.key}`);
+
+        const displayKeyEvent = document.querySelector('#displayKey');
+        displayKeyEvent.innerText = e.key
+    })
+</script>
+</html>

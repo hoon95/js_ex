@@ -8,9 +8,14 @@
 <body>
 
 </body>
-<script>
+<script async="async">
+    window.onload = () => {
+        document.write('window.onload');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('DOM이 완전히 로드되었음');
+        document.write('DOMContentLoaded');
     })
+
 </script>
 </html>
