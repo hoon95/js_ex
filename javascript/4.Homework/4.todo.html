@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #todoList {
+            li {
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+    <input type="text" placeholder="New to-do">
+    <button id="addBtn">Add</button>
+
+    <ul id="todoList"></ul>
+</body>
+
+<script>
+    let btn = document.querySelector('#addBtn'),
+        input = document.querySelector('input'),
+        list = document.querySelector('#todoList');
+
+    // Add 버튼으로 To-Do 목록 추가하기
+    btn.addEventListener('click', (e) => {
+        let li = document.createElement('li');
+        li.innerHTML = `<li>${input.value}</li>`;
+        list.appendChild(li);
+
+        // To-Do 선택 시 취소선
+        list.querySelectorAll('li').forEach((e) => {
+            e.addEventListener('click', (el) => {
+                el.target.style.textDecoration = 'line-through';
+            })
+        })
+    })
+
+</script>
+</html>

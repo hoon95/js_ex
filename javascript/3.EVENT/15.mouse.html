@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #trackingArea {
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="trackingArea"></div>
+
+</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('#trackingArea').addEventListener('mousemove', (e)=> {
+                console.log(e);
+                console.log(`X : ${e.clientX}`);
+                console.log(`Y : ${e.clientY}`);
+            });
+
+            window.addEventListener('beforeunload', (e) => {e.preventDefault();})
+        })
+    </script>
+</html>

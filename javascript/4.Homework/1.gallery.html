@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 20vw;
+        }
+        section {
+            display: flex;
+            gap: 10px;
+            img {width: 100%;}
+        }
+
+        .hoverImg{
+            margin-top: 10px;
+            img {width: 200%;}
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <section>
+        <img src="./img/cat1.jpg">
+        <img src="./img/cat2.jpg">
+        <img src="./img/cat3.jpg">
+    </section>
+    
+    <div class="hoverImg">
+        <img src="">
+    </div>
+    
+</body>
+
+<script>
+    let img = document.querySelectorAll('img');
+    img.forEach((i) => {
+        i.addEventListener('mouseover', (e) => {
+            document.querySelector('.hoverImg img').setAttribute('src', i.getAttribute('src'));
+        })
+    })
+</script>
+</html>

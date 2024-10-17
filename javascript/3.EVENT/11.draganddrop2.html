@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            width: 50%;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            & .dragItem {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+                padding: 10px;
+                cursor: pointer;
+    
+                &#dragItem1 {background-color: #ffcc00;}
+                &#dragItem2 {background-color: #ffccff;}
+                &#dragItem3 {background-color: #ffccaa;}
+            }
+
+            #dropZone {
+                display: flex;
+                gap: 10px;
+                width: 100%;
+                height: 300px;
+                border: 2px dashed #cccccc;
+                background-color: #f0f0f0;
+                margin-top: 10px;
+                padding: 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="dragItem1" class="dragItem" draggable="true">Drag Me1</div>
+    <div id="dragItem2" class="dragItem" draggable="true">Drag Me2</div>
+    <div id="dragItem3" class="dragItem" draggable="true">Drag Me3</div>
+    <div id="dropZone">Drop here</div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let dragItem = document.querySelectorAll('.dragItem');
+        let dropZone = document.querySelector('#dropZone');
+        let curDropItem;
+    
+        dragItem.forEach((item) => {
+            item.addEventListener('dragstart', (e) => {
+                curDropItem = e;
+            })
+        });
+        dropZone.addEventListener('dragover', (e) => {e.preventDefault();})
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.appendChild(curDropItem.target);
+        });
+    })
+</script>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">복
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="myTextArea">이 글자를 복사해보세요</textarea>
+    <script>
+        document.querySelector('#myTextArea').addEventListener('copy', () => {
+            alert('텍스트가 복사되었습니다.');
+        });
+        document.querySelector('#myTextArea').addEventListener('paste', () => {
+            alert('텍스트가 붙여넣기 되었습니다.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        section {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            margin: auto;
+            
+            #imgContainer {
+                position: absolute;
+                left: 0;
+                display: flex;
+                width: 1200px;
+                height: 400px;
+
+                img {
+                    width: 400px;
+                }
+            }
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Slider #1</h1>
+    <section>
+        <div id="imgContainer">
+            <img src="./img/cat1.jpg" id="cat1">
+            <img src="./img/cat2.jpg" id="cat2">
+            <img src="./img/cat3.jpg" id="cat3">
+        </div>
+    </section>
+    <p>cat1.jpg</p>
+
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+    
+</body>
+
+<script>
+    let prevBtn = document.querySelector('#prev'),
+        nextBtn = document.querySelector('#next'),
+        imgContainer = document.querySelector('#imgContainer'),
+        imgList = imgContainer.querySelectorAll('img'),
+        text = document.querySelector('p'),
+        count = 1;
+
+    nextBtn.addEventListener('click', () => {
+        count++;
+
+        let px = getComputedStyle(imgContainer).left.slice(0,-2);
+        imgContainer.style.left = `${Number(px) - 400}px`
+        if(imgContainer.style.left == '-1200px'){
+            count = 1;
+            imgContainer.style.left = '0';
+        }
+
+        text.innerText = `cat${count}.jpg`;
+    })
+    
+    prevBtn.addEventListener('click', () => {
+        count--;
+        let px = getComputedStyle(imgContainer).left.slice(0,-2);
+        if(px == 0) {
+            count = 3;
+            imgContainer.style.left = '-800px';
+        } else {
+            imgContainer.style.left = `${Number(px) + 400}px`
+        }
+
+        text.innerText = `cat${count}.jpg`;
+    })
+</script>
+</html>
