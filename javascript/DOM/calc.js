@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     let calcInput = document.querySelector('input'),
-        // calcBtn = document.querySelectorAll('#calcBtn tr td');
         calcBtn = document.querySelectorAll('button');
 
     for(calc of calcBtn) {
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 calcInput.value += calcTarget;
             }
-
         })
     }
 });
