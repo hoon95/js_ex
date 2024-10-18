@@ -1,0 +1,149 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    background: url('./img/bg.jpg') center / cover no-repeat;
+    font-family: "Preahvihear", sans-serif;
+
+    .toDoList {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30vw;
+        height: 50vh;
+        background-color: #f7d97f;
+        border: 2px solid #703333;
+        border-radius: 10px;
+
+        h1 {
+            flex-grow: 1;
+        }
+
+        .pinContainer {
+            .pin {
+                position: absolute;
+                width: 5%;
+                height: 8%;
+                top: -5%;
+                background-color: #5c3037;
+                border-radius: 10px;
+
+                &:nth-child(1) { left: 15%; }
+                &:nth-child(2) { left: 30%; }
+                &:nth-child(3) { left: 45%; }
+                &:nth-child(4) { left: 60%; }
+                &:nth-child(5) { left: 75%; }
+            }
+        }
+
+        .inputContainer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            input {
+                width: 100%;
+                height: 20px;
+                padding: 10px;
+                border: 0;
+                border-radius: 0 0 9px 9px;
+
+                &:focus{
+                    outline:none;
+
+                    &::placeholder {
+                        color: transparent
+                    }
+                }
+            }
+            button {
+                position: absolute;
+                right: 0;
+                color: #5c3037;
+                font-size: 20px;
+                background-color: transparent;
+                border: 0;
+                padding: 10px;
+            }
+        }
+
+        #todoUl {
+            width: calc(100% - 10px);
+            flex-grow: 1;
+            text-align: left;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 15px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #5c3037;
+                border-radius: 10px;
+                background-clip: padding-box;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+            }
+        
+
+            li {
+                position: relative;
+                width: 60%;
+                list-style-type: '✅ ';
+                cursor: pointer;
+                margin-bottom: 20px;
+
+                button {
+                    position: absolute;
+                    color: #ff4343;
+                    top: 10px;
+                    right: -30px;
+                    font-size: 1em;
+                    background: transparent;
+                    border: 0;
+                    height: 25px;
+                    padding: 0;
+                    cursor: pointer;
+                    
+                    i {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .pencil {
+        display: flex;
+        flex-direction: column;
+        width: 2vw;
+        height: 50vh;
+        border: 2px solid #5c3037;
+        border-radius: 30px 30px 100px 100px;
+        background-color: #7886cb;
+        
+        > div {
+            &.top {
+                height: 10%;
+                border-radius: 2px 2px 0 0;
+                background-color: #f45f82;
+                border-bottom: 1px solid #5c3037;
+            }
+            &.mid{ height: 85%; }
+            &.bot {
+                height: 5%;
+                /* border-top: 30px solid #fcc09c;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent; */
+                background: #fcc09c;
+                border-top: 1px solid #5c3037;
+                border-radius: 0 0 15px 15px;
+            }
+        }
+    }
+}
