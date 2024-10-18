@@ -1,3 +1,7 @@
+:root {
+    --sec-height: 35vh;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -6,7 +10,7 @@ body {
     height: 100vh;
     text-align: center;
     overflow: hidden;
-    background: url('./img/bg.jpg') center / cover no-repeat;
+    background: url('./img/bg2.jpg') center / cover no-repeat;
     font-family: "Preahvihear", sans-serif;
 
     .toDoList {
@@ -15,7 +19,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
         width: 30vw;
-        height: 50vh;
+        height: var(--sec-height);
         background-color: #f7d97f;
         border: 2px solid #703333;
         border-radius: 10px;
@@ -122,7 +126,7 @@ body {
         display: flex;
         flex-direction: column;
         width: 2vw;
-        height: 50vh;
+        height: var(--sec-height);
         border: 2px solid #5c3037;
         border-radius: 30px 30px 100px 100px;
         background-color: #7886cb;
