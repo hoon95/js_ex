@@ -35,7 +35,33 @@
     
         
         <ul id="todoUl">
-            <!-- <li>To-Do</li> -->
+            <!-- Test start -->
+            <li>test 111111
+                <button class="listDel">
+                    <i class="fa-solid fa-circle-xmark"></i>    
+                </button>
+            </li>
+            <li>test 22222
+                <button class="listDel">
+                    <i class="fa-solid fa-circle-xmark"></i>    
+                </button>
+            </li>
+            <li>test 333333
+                <button class="listDel">
+                    <i class="fa-solid fa-circle-xmark"></i>    
+                </button>
+            </li>
+            <li>test 333333
+                <button class="listDel">
+                    <i class="fa-solid fa-circle-xmark"></i>    
+                </button>
+            </li>
+            <li>test 333333
+                <button class="listDel">
+                    <i class="fa-solid fa-circle-xmark"></i>    
+                </button>
+            </li>
+            <!-- Test end -->
         </ul>
 
         <div class="inputContainer">
@@ -70,7 +96,13 @@
         // To-Do 선택 시 취소선
         list.querySelectorAll('li').forEach((e) => {
             e.addEventListener('click', (el) => {
-                el.target.style.textDecoration = 'line-through';
+                if(el.target.classList[0] == 'lineThrough') {
+                    el.target.classList.remove('lineThrough');
+                    el.target.style.textDecoration = 'none';
+                }else {
+                    el.target.classList.add('lineThrough');
+                    el.target.style.textDecoration = 'line-through';
+                }
             })
         })
 
