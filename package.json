@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@fast-csv/format": "^5.0.2",
+    "csv-writer": "^1.6.0",
+    "random-date-generator": "^1.0.2",
+    "uuid": "^11.0.1"
+  }
+}
