@@ -2,8 +2,8 @@ const fs = require('fs');
 
 class NameGenerator { 
     generateName() {
-        const firstName = fs.readFileSync('./csv/name/firstName.csv', 'utf-8');
-        const lastName = fs.readFileSync('./csv/name/lastName.csv', 'utf-8');
+        const firstName = fs.readFileSync('../../csv/name/firstName.csv', 'utf-8');
+        const lastName = fs.readFileSync('../../csv/name/lastName.csv', 'utf-8');
         const firstNameSplit = firstName.split(',');
         const lastNameSplit = lastName.split(',');
 
