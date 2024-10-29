@@ -21,6 +21,7 @@ class UserGenerator {
                 {id: 'id', title: 'Id'},
                 {id: 'name', title: 'Name'},
                 {id: 'gender', title: 'Gender'},
+                {id: 'age', title: 'Age'},
                 {id: 'birth', title: 'Birthdate'},
                 {id: 'addr', title: 'Address'}
             ]
@@ -31,13 +32,16 @@ class UserGenerator {
             const id = idGenerate.generateId();
             const names = nameGenerate.generateName();
             const gender = genderGenerate.generateGender();
-            const birth = birthGenerate.generateBirthdate();
+            const birthAge = birthGenerate.generateBirthdate();
+            const age = birthAge.age;
+            const birth = birthAge.fullYear;
             const addr = addrGenerate.generateAddress();
 
             records.push({
                 id: id,
                 name: names,
                 gender: gender,
+                age: age,
                 birth: birth,
                 addr: addr
             })

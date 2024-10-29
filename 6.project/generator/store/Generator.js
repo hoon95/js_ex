@@ -9,8 +9,7 @@ class StoreGenerator {
         const idGenerate = new IdGenerator();
         const nameGenerate = new NameGenerator();
         const addrGenerate = new AddressGenerator();
-        
-        // CSV 변환
+
         const csvWriter = createCsvWriter({
             path: '../../csv/result/store.csv',
             header: [

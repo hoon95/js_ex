@@ -24,7 +24,11 @@ class BirthdateGenerator {
         
         const dayEdit = day >= 10 ? day : `0${day}`;
         
-        return `${year}-${monthEdit}-${dayEdit}`;
+        return {
+            age: 2024 - year + 1,
+            fullYear: `${year}-${monthEdit}-${dayEdit}`
+        }
+        
     }
 }
 
