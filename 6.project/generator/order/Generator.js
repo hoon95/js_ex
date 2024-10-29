@@ -2,7 +2,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 const IdGenerator = require('../common/IdGenerator');
 const OrderAtGenerator = require('./OrderAtGenerator');
-const LoadStoreUserId = require('./LoadId');
+const LoadStoreUserId = require('../common/LoadId');
 
 class OrderGenerator {
     generateOrder() {
