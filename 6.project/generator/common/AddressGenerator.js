@@ -1,28 +1,27 @@
 const fs = require('fs');
 
 class AddressGenerator {
-    generateAddress() {
-        const city = fs.readFileSync('../csv/address/city.csv', 'utf-8');
-        const seoul = fs.readFileSync('../csv/address/countrySeoul.csv', 'utf-8');
-        const gyeonggi = fs.readFileSync('../csv/address/countryGyeonggi.csv', 'utf-8');
-        const busan = fs.readFileSync('../csv/address/countryBusan.csv', 'utf-8');
-        const citySplit = city.split(',');
-        const seoulSplit = seoul.split(',');
-        const gyeonggiSplit = gyeonggi.split(',');
-        const busanSplit = busan.split(',');
+    constructor() {
+        this.city = fs.readFileSync('../csv/address/city.csv', 'utf-8').split(',');
+        this.seoul = fs.readFileSync('../csv/address/countrySeoul.csv', 'utf-8').split(',');
+        this.gyeonggi = fs.readFileSync('../csv/address/countryGyeonggi.csv', 'utf-8').split(',');
+        this.busan = fs.readFileSync('../csv/address/countryBusan.csv', 'utf-8').split(',');
+    }
 
-        const cityName = citySplit[Math.floor(Math.random() * citySplit.length)];
+    generateAddress() {
+
+        const cityName = this.city[Math.floor(Math.random() * this.city.length)];
         let countryName;
 
         switch (cityName) {
             case '서울':
-                countryName = seoulSplit[Math.floor(Math.random() * seoulSplit.length)];
+                countryName = this.seoul[Math.floor(Math.random() * this.seoul.length)];
                 break;
             case '경기':
-                countryName = gyeonggiSplit[Math.floor(Math.random() * gyeonggiSplit.length)];
+                countryName = this.gyeonggi[Math.floor(Math.random() * this.gyeonggi.length)];
                 break;
             case '부산':
-                countryName = busanSplit[Math.floor(Math.random() * busanSplit.length)];
+                countryName = this.busan[Math.floor(Math.random() * this.busan.length)];
                 break;
         }
 

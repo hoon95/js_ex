@@ -5,7 +5,8 @@ const AddressGenerator = require('../common/AddressGenerator');
 const NameGenerator = require('./NameGenerator');
 
 class StoreGenerator {
-    constructor() {
+    constructor(num) {
+        this.num = num;
         this.idGenerate = new IdGenerator();
         this.nameGenerate = new NameGenerator();
         this.addrGenerate = new AddressGenerator();
@@ -23,8 +24,7 @@ class StoreGenerator {
 
     generateStore() {
         const records = [];
-        const num = 100;
-        for(let i=1; i<=num; i++) {
+        for(let i=1; i<=this.num; i++) {
             const id = this.idGenerate.generateId();
             const nametype = this.nameGenerate.generateName();
             const addr = this.addrGenerate.generateAddress();

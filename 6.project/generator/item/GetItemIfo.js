@@ -12,7 +12,4 @@ class GetItemInfo {
     }
 }
 
-const itemInfo = new GetItemInfo();
-itemInfo.Item();
-
 module.exports = GetItemInfo;

@@ -7,7 +7,8 @@ const AddressGenerator = require('../common/AddressGenerator');
 const GenderGenerator = require('./GenderGenerator');
 
 class UserGenerator {
-    constructor() {
+    constructor(num) {
+        this.num = num;
         this.idGenerate = new IdGenerator();
         this.nameGenerate = new NameGenerator();
         this.genderGenerate = new GenderGenerator();
@@ -29,9 +30,7 @@ class UserGenerator {
 
     generateUser() {
         const records = [];
-        const num = 1000;
-
-        for(let i=1; i<=num; i++) {
+        for(let i=1; i<=this.num; i++) {
             const id = this.idGenerate.generateId();
             const names = this.nameGenerate.generateName();
             const gender = this.genderGenerate.generateGender();

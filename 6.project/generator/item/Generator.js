@@ -4,12 +4,13 @@ const IdGenerator = require('../common/IdGenerator');
 const GetItemInfo = require('./GetItemIfo');
 
 class ItemGenerator {
-    generateItem() {
-        const idGenerate = new IdGenerator();
-        const itemInfo = new GetItemInfo();
+    constructor(num) {
+        this.num = num;
+        this.idGenerate = new IdGenerator();
+        this.itemInfo = new GetItemInfo();
         
         // CSV 변환
-        const csvWriter = createCsvWriter({
+        this.csvWriter = createCsvWriter({
             path: '../csv/result/item.csv',
             header: [
                 {id: 'id', title: 'Id'},
@@ -18,11 +19,14 @@ class ItemGenerator {
                 {id: 'price', title: 'UnitPrice'},
             ]
         });
-            
+
+    }
+
+    generateItem() {        
         const records = [];
-        for(let i=1; i<=20; i++) {
-            const id = idGenerate.generateId();
-            const unit = itemInfo.Item();
+        for(let i=1; i<=this.num; i++) {
+            const id = this.idGenerate.generateId();
+            const unit = this.itemInfo.Item();
             const unitRandom = unit[Math.floor(Math.random() * unit.length)];
 
             records.push({
@@ -33,7 +37,7 @@ class ItemGenerator {
             })
         }
          
-        csvWriter.writeRecords(records)
+        this.csvWriter.writeRecords(records)
             .then(() => {
                 console.log('Item 데이터 생성 완료');
             });

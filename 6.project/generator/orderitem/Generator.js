@@ -4,12 +4,13 @@ const IdGenerator = require('../common/IdGenerator');
 const LoadStoreUserId = require('../common/LoadId');
 
 class OrderItemGenerator {
-    generateOrderItem() {
-        const idGenerate = new IdGenerator();
-        const loadId = new LoadStoreUserId();
+    constructor(num) {
+        this.num = num;
+        this.idGenerate = new IdGenerator();
+        this.loadId = new LoadStoreUserId();
         
         // CSV 변환
-        const csvWriter = createCsvWriter({
+        this.csvWriter = createCsvWriter({
             path: '../csv/result/orderitem.csv',
             header: [
                 {id: 'id', title: 'Id'},
@@ -17,12 +18,14 @@ class OrderItemGenerator {
                 {id: 'itemid', title: 'ItemId'},
             ]
         });
-            
+    }
+
+    generateOrderItem() {
         const records = [];
-        for(let i=1; i<=50000; i++) {
-            const id = idGenerate.generateId();
-            const orderid = loadId.Order();
-            const itemid = loadId.Item();
+        for(let i=1; i<=this.num; i++) {
+            const id = this.idGenerate.generateId();
+            const orderid = this.loadId.Order();
+            const itemid = this.loadId.Item();
 
             records.push({
                 id: id,
@@ -31,7 +34,7 @@ class OrderItemGenerator {
             })
         }
          
-        csvWriter.writeRecords(records)
+        this.csvWriter.writeRecords(records)
             .then(() => {
                 console.log('OrderItem 데이터 생성 완료');
             });

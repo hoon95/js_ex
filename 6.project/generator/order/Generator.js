@@ -5,13 +5,14 @@ const OrderAtGenerator = require('./OrderAtGenerator');
 const LoadStoreUserId = require('../common/LoadId');
 
 class OrderGenerator {
-    generateOrder() {
-        const idGenerate = new IdGenerator();
-        const loadId = new LoadStoreUserId();
-        const orderAt = new OrderAtGenerator();
+    constructor(num) {
+        this.num = num;
+        this.idGenerate = new IdGenerator();
+        this.loadId = new LoadStoreUserId();
+        this.orderAt = new OrderAtGenerator();
         
         // CSV 변환
-        const csvWriter = createCsvWriter({
+        this.csvWriter = createCsvWriter({
             path: '../csv/result/order.csv',
             header: [
                 {id: 'id', title: 'Id'},
@@ -20,13 +21,15 @@ class OrderGenerator {
                 {id: 'userid', title: 'UserId'},
             ]
         });
-            
+    }
+
+    generateOrder() {
         const records = [];
-        for(let i=1; i<=1000; i++) {
-            const id = idGenerate.generateId();
-            const orderat = orderAt.generateOrderAt();
-            const storeid = loadId.Store();
-            const userid = loadId.User();
+        for(let i=1; i<=this.num; i++) {
+            const id = this.idGenerate.generateId();
+            const orderat = this.orderAt.generateOrderAt();
+            const storeid = this.loadId.Store();
+            const userid = this.loadId.User();
 
             records.push({
                 id: id,
@@ -36,7 +39,7 @@ class OrderGenerator {
             })
         }
          
-        csvWriter.writeRecords(records)
+        this.csvWriter.writeRecords(records)
             .then(() => {
                 console.log('Order 데이터 생성 완료');
             });

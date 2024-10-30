@@ -21,7 +21,6 @@ class BirthdateGenerator {
         const month = String(this.getRandomInt(1, 12)).padStart(2, '0');
         const day = String(this.getRandomInt(1, this.getFullMonth(year, month))).padStart(2, '0');
         
-        
         return {
             age: 2024 - year + 1,
             fullYear: `${year}-${month}-${day}`
