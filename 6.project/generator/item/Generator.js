@@ -10,7 +10,7 @@ class ItemGenerator {
         
         // CSV 변환
         const csvWriter = createCsvWriter({
-            path: '../../csv/result/item.csv',
+            path: '../csv/result/item.csv',
             header: [
                 {id: 'id', title: 'Id'},
                 {id: 'name', title: 'Name'},
@@ -35,10 +35,9 @@ class ItemGenerator {
          
         csvWriter.writeRecords(records)
             .then(() => {
-                console.log('...Done');
+                console.log('Item 데이터 생성 완료');
             });
     }
 }
 
-const itemGenerator = new ItemGenerator();
-itemGenerator.generateItem();
+module.exports = ItemGenerator;

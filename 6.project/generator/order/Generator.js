@@ -12,7 +12,7 @@ class OrderGenerator {
         
         // CSV 변환
         const csvWriter = createCsvWriter({
-            path: '../../csv/result/order.csv',
+            path: '../csv/result/order.csv',
             header: [
                 {id: 'id', title: 'Id'},
                 {id: 'orderat', title: 'OrderAt'},
@@ -38,10 +38,9 @@ class OrderGenerator {
          
         csvWriter.writeRecords(records)
             .then(() => {
-                console.log('...Done');
+                console.log('Order 데이터 생성 완료');
             });
     }
 }
 
-const orderGenerator = new OrderGenerator();
-orderGenerator.generateOrder();
+module.exports = OrderGenerator;

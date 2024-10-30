@@ -15,7 +15,7 @@ class UserGenerator {
         this.addrGenerate = new AddressGenerator();
 
         this.csvWriter = createCsvWriter({
-            path: '../../csv/result/user.csv',
+            path: '../csv/result/user.csv',
             header: [
                 {id: 'id', title: 'Id'},
                 {id: 'name', title: 'Name'},
@@ -29,9 +29,9 @@ class UserGenerator {
 
     generateUser() {
         const records = [];
-        const userNum = 1000;
+        const num = 1000;
 
-        for(let i=1; i<=userNum; i++) {
+        for(let i=1; i<=num; i++) {
             const id = this.idGenerate.generateId();
             const names = this.nameGenerate.generateName();
             const gender = this.genderGenerate.generateGender();
@@ -49,10 +49,9 @@ class UserGenerator {
         }
          
         this.csvWriter.writeRecords(records)
-            .then(() => console.log('...Done'))
+            .then(() => console.log('User 데이터 생성 완료'))
             .catch(err => console.error(err.message));
     }
 }
 
-const userGenerate = new UserGenerator();
-userGenerate.generateUser();
+module.exports = UserGenerator;

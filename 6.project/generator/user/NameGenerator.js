@@ -1,14 +1,14 @@
 const fs = require('fs');
 
-class NameGenerator { 
-    generateName() {
-        const firstName = fs.readFileSync('../../csv/name/firstName.csv', 'utf-8');
-        const lastName = fs.readFileSync('../../csv/name/lastName.csv', 'utf-8');
-        const firstNameSplit = firstName.split(',');
-        const lastNameSplit = lastName.split(',');
+class NameGenerator {
+    constructor() {
+        this.firstName = fs.readFileSync('../csv/name/firstName.csv', 'utf-8').split(',');
+        this.lastName = fs.readFileSync('../csv/name/lastName.csv', 'utf-8').split(',');
+    }
 
-        const name1 = firstNameSplit[Math.floor(Math.random() * firstNameSplit.length)];
-        const name2 = lastNameSplit[Math.floor(Math.random() * lastNameSplit.length)];
+    generateName() {
+        const name1 = this.firstName[Math.floor(Math.random() * this.firstName.length)];
+        const name2 = this.lastName[Math.floor(Math.random() * this.lastName.length)];
         return `${name1}${name2}`;
     }
 }

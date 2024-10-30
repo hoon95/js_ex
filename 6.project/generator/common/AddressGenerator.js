@@ -2,10 +2,10 @@ const fs = require('fs');
 
 class AddressGenerator {
     generateAddress() {
-        const city = fs.readFileSync('../../csv/address/city.csv', 'utf-8');
-        const seoul = fs.readFileSync('../../csv/address/countrySeoul.csv', 'utf-8');
-        const gyeonggi = fs.readFileSync('../../csv/address/countryGyeonggi.csv', 'utf-8');
-        const busan = fs.readFileSync('../../csv/address/countryBusan.csv', 'utf-8');
+        const city = fs.readFileSync('../csv/address/city.csv', 'utf-8');
+        const seoul = fs.readFileSync('../csv/address/countrySeoul.csv', 'utf-8');
+        const gyeonggi = fs.readFileSync('../csv/address/countryGyeonggi.csv', 'utf-8');
+        const busan = fs.readFileSync('../csv/address/countryBusan.csv', 'utf-8');
         const citySplit = city.split(',');
         const seoulSplit = seoul.split(',');
         const gyeonggiSplit = gyeonggi.split(',');
