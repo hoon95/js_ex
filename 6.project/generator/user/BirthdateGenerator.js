@@ -1,32 +1,35 @@
 class BirthdateGenerator {
-    generateBirthdate() {
-        const today = new Date();
-        const year = today.getFullYear() - Math.floor(Math.random() * 20) - 20;
-        const month = Math.floor(Math.random() * 12) + 1;
-        const monthEdit = month >= 10 ? month : `0${month}`;
+    constructor() {
+        this.currentYear = new Date().getFullYear();
+    }
 
-        // 월에 따른 날짜 계산
-        let day = 1;
-        const month_31 = [1, 3, 5, 7, 8, 10, 12];
-        const month_30 = [4, 6, 9, 11];
-        if(month_31.includes(month)) {
-            day = Math.floor(Math.random() * 31) + 1;
-        }else if(month_30.includes(month)) {
-            day = Math.floor(Math.random() * 30) + 1;
-        }else if(month == 2) {
-            // 윤년 계산
-            if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-                day = Math.floor(Math.random() * 29) + 1;
-            } else {
-                day = Math.floor(Math.random() * 28) + 1;
-            }
-        }
+    getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    generateBirthdate() {
+        const year = this.currentYear - this.getRandomInt(20, 40);
+        const month = String(this.getRandomInt(1, 12)).padStart(2, '0');
+        const daysInMonth = {
+            1: 31, 
+            2: (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28,  // 윤년 케이스 추가
+            3: 31,
+            4: 30,
+            5: 31, 
+            6: 30,
+            7: 31, 
+            8: 31, 
+            9: 30, 
+            10: 31,
+            11: 30, 
+            12: 31
+        };
+        const day = this.getRandomInt(1, daysInMonth[Number(month)]).toString().padStart(2, '0');
         
-        const dayEdit = day >= 10 ? day : `0${day}`;
         
         return {
             age: 2024 - year + 1,
-            fullYear: `${year}-${monthEdit}-${dayEdit}`
+            fullYear: `${year}-${month}-${day}`
         }
         
     }

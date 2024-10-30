@@ -7,15 +7,14 @@ const AddressGenerator = require('../common/AddressGenerator');
 const GenderGenerator = require('./GenderGenerator');
 
 class UserGenerator {
-    generateUser() {
-        const idGenerate = new IdGenerator();
-        const nameGenerate = new NameGenerator();
-        const genderGenerate = new GenderGenerator();
-        const birthGenerate = new BirthdateGenerator();
-        const addrGenerate = new AddressGenerator();
-        
-        // CSV 변환
-        const csvWriter = createCsvWriter({
+    constructor() {
+        this.idGenerate = new IdGenerator();
+        this.nameGenerate = new NameGenerator();
+        this.genderGenerate = new GenderGenerator();
+        this.birthGenerate = new BirthdateGenerator();
+        this.addrGenerate = new AddressGenerator();
+
+        this.csvWriter = createCsvWriter({
             path: '../../csv/result/user.csv',
             header: [
                 {id: 'id', title: 'Id'},
@@ -26,31 +25,32 @@ class UserGenerator {
                 {id: 'addr', title: 'Address'}
             ]
         });
-            
+    }
+
+    generateUser() {
         const records = [];
-        for(let i=1; i<=1000; i++) {
-            const id = idGenerate.generateId();
-            const names = nameGenerate.generateName();
-            const gender = genderGenerate.generateGender();
-            const birthAge = birthGenerate.generateBirthdate();
-            const age = birthAge.age;
-            const birth = birthAge.fullYear;
-            const addr = addrGenerate.generateAddress();
+        const userNum = 1000;
+
+        for(let i=1; i<=userNum; i++) {
+            const id = this.idGenerate.generateId();
+            const names = this.nameGenerate.generateName();
+            const gender = this.genderGenerate.generateGender();
+            const birthAge = this.birthGenerate.generateBirthdate();
+            const addr = this.addrGenerate.generateAddress();
 
             records.push({
                 id: id,
                 name: names,
                 gender: gender,
-                age: age,
-                birth: birth,
+                age: birthAge.age,
+                birth: birthAge.fullYear,
                 addr: addr
             })
         }
          
-        csvWriter.writeRecords(records)
-            .then(() => {
-                console.log('...Done');
-            });
+        this.csvWriter.writeRecords(records)
+            .then(() => console.log('...Done'))
+            .catch(err => console.error(err.message));
     }
 }
 
