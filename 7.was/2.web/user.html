@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>User List</title>
+</head>
+<body>
+    <form action="/user" method="POST" class="mt-6 ml-6 flex items-center justify-center gap-5">
+        <label for="username" id="username" class="block text-sm/6 font-medium text-gray-900">User Name : </label>
+        <input type="text" name="username" autofocus autocomplete="off" class="block w-3/12 rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+        <input type="submit" class="">
+    </form>
+
+    <h2 class="text-base/7 font-semibold text-gray-900">User List</h2>
+
+    <ul class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        ${userList}
+    </ul>
+</body>
+</html>
