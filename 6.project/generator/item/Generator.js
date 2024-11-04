@@ -24,7 +24,7 @@ class ItemGenerator {
 
     generateItem() {        
         const records = [];
-        for(let i=1; i<=this.num; i++) {
+        for (let i=1; i<=this.num; i++) {
             const id = this.idGenerate.generateId();
             const unit = this.itemInfo.Item();
             const unitRandom = unit[Math.floor(Math.random() * unit.length)];
