@@ -4,6 +4,7 @@ const app = express();
 
 app.use('/static/', express.static('static'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 let userArr = [];
 
@@ -24,9 +25,11 @@ app.get('/user', (req, res) => {
     let userList = [];
     userArr.map((item, id) => {
         userList += `
-            <li class="text-sm/6 font-medium text-gray-900">
-                ${item.username}
-                <a href='/user/delete?userid=${id}')>삭제</a>
+            <li class="text-slate-800 mb-3">
+                ID : ${item.userid}
+                Name: ${item.username}
+                <a href='/user/update?userid=${id}' class="text-slate-500 text-sm")>수정</a>
+                <a href='/user/delete?userid=${id}' class="text-slate-500 text-sm")>삭제</a>
             </li>
         `;
     })
@@ -37,16 +40,53 @@ app.get('/user', (req, res) => {
 });
 
 app.post('/user', (req, res) => {
-    userArr.push({ username : req.body.username });
-    res.redirect('/user');
+    userArr.push({ userid : req.body.username, username : req.body.username });
+    res.send(`
+        <script>
+                alert('등록 완료');
+                history.back();
+        </script>
+    `);
+});
+
+app.get('/user/update', (req, res) => {
+    const userIdx = req.query.userid;
+    res.send(`
+        <script>
+            const updateInfo = prompt('수정할 이름을 입력하세요.');
+            if(updateInfo) {
+                fetch('/user/update', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: ${userIdx}, name: updateInfo })
+                })
+            }
+            history.back();
+        </script>
+    `);
+});
+
+app.post('/user/update', (req, res) => {
+    const { id, name } = req.body;
+    userArr[id].username = name;
+    console.log(userArr);
+    
+    res.send(`
+        <script>
+            alert('수정 완료');
+            history.back();
+            location.reload();
+        </script>
+    `);
 });
 
 app.get('/user/delete', (req, res) => {
     userArr.splice(Number(req.query.userid), 1);
     res.redirect('/user');
-})
+});
 
 app.listen(5000, () => {
     console.log('express 실행');
 });
-
