@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>상품 목록</h1>
+    <table>
+        <tr>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>담기</th>
+        </tr>
+        <tr>
+            <td>상품 A</td>
+            <td>10000원</td>
+            <td><button onclick="addToCart('상품 A', 10000)">담기</button></td>
+        </tr>
+        <tr>
+            <td>상품 B</td>
+            <td>20000원</td>
+            <td><button onclick="addToCart('상품 B', 20000)">담기</button></td>
+        </tr>
+    </table>
+    <a href="/cart">장바구니</a>
+
+    <script>
+        function addToCart(name, price) {
+            fetch('/add-to-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, price })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
