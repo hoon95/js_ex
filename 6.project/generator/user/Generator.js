@@ -30,7 +30,7 @@ class UserGenerator {
 
     generateUser() {
         const records = [];
-        for(let i=1; i<=this.num; i++) {
+        for ( let i = 1; i <= this.num; i++ ) {
             const id = this.idGenerate.generateId();
             const names = this.nameGenerate.generateName();
             const gender = this.genderGenerate.generateGender();

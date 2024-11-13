@@ -12,14 +12,14 @@
     │     ├── store
     │     │     ├── brand.csv
     │     │     └── store.csv
-    │     ├── result
+    │     ├── result **분리
     │     │     ├── user.csv
     │     │     ├── store.csv
     │     │     ├── order.csv
     │     │     ├── item.csv
     │     │     └── orderitem.csv
     └── generator
-          ├── Generator.js
+          ├── Generator.js  **중복
           ├── common
           │     ├── AddressGenerator.js
           │     ├── IdGenerator.js

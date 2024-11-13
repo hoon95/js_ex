@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background: #f2f2f2;
+}
+
+button {
+    cursor: pointer;
+}
+
+nav {
+    height: 3em;
+    background-color: #333;
+
+    ul {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 3em;
+        list-style-type: none;
+        height: 100%;
+        margin: 0;
+
+        li {
+            a {
+                color: #fff;
+                text-decoration: none;
+    
+                &:hover {
+                    color: #333;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+}
